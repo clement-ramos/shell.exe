@@ -15,7 +15,7 @@ if [ "$a" != "Id" ];
 		sudo useradd "$UserNameNoSpace"
                 echo "$UserNameNoSpace":"$UserPasswd" | sudo chpasswd
 
-		if [ "$e" == "Admin" ];
+		if [[ "$e" = *"Admin"* ]];
 		then
 		sudo adduser "$UserNameNoSpace" sudo
 		fi
