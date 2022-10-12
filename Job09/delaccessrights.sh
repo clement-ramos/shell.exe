@@ -2,7 +2,7 @@
 
 IFS=","
 
-cat Shell_Userlist.csv | while read a b c d e;
+cat Backup/Shell_UserlistBackup.csv | while read a b c d e;
 do
 
 UserName="$b$c"
