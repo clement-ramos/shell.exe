@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for ((c=1 ; c<=10 ; c++))
+for ((i=1 ; i<=10 ; i++))
 do
-	echo "Je suis un script qui arrive à faire une boucle $c"
+	echo "Je suis un script qui arrive à faire une boucle $i"
 done

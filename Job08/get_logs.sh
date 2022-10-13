@@ -1,4 +1,5 @@
 #!/bin/bash
+#var=$(pwd)
 
 date=$(date '+%d-%m-%Y-%H:%M')
 

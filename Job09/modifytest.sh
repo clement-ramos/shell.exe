@@ -2,9 +2,11 @@
 
 #Test=sudo find Shell_Userlist.csv -mmin -1
 
-#echo "$Test"
+#Watch if my .csv fil have been modify in the last 10 min
 
 Etat=$(sudo find Shell_Userlist.csv -mmin -10 | grep -c Shell_Userlist.csv)
+
+#if its true launch ./accessrights
 
 echo $Etat
 if [[ $Etat = "1" ]]; then

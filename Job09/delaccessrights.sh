@@ -7,7 +7,6 @@ do
 
 UserName="$b$c"
 UserNameNoSpace="${UserName// /}"
-
 UserPasswd="$d$d"
 
 if [ "$a" != "Id" ];
