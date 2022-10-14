@@ -2,11 +2,13 @@
 #var=$(pwd)
 
 date=$(date '+%d-%m-%Y-%H:%M')
+path=$(pwd)
+#echo $path
 
-sudo grep -c "session opened" /var/log/auth.log > Backup/number_connection-$date
+sudo grep -c "session opened" /var/log/auth.log > $path/Backup/number_connection-$date
 
-tar -czvf number_connection.tar.gz /Backup
+tar -czvf number_connection.tar.gz $path/Backup
 
-mv number_connection.tar.gz Backup/number_connection-$date.tar.gz
+mv number_connection.tar.gz $path/Backup/number_connection-$date.tar.gz
 
-rm Backup/number_connection-$date
+rm $path/Backup/number_connection-$date
