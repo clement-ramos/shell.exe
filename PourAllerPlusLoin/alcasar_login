@@ -1,35 +1,10 @@
-	#!/bin/bash
+#!/bin/bash
 
-script=login
+script=login.txt
 
-username=clement.ramos@laplateforme.io
-
-password=Heramoes1803#
-
+username=$1
+password=$2
 website=https://alcasar.laplateforme.io/status.php
 
-echo 'key <tab>' >> $script
-
-for i in `echo $username|fold -w1`
-do
-    echo 'key '$i >> $script
-done
-
-
-echo 'key <tab>' >> $script
-
-for i in `echo $password|fold -w1` 
-do
-    echo 'key '$i >> $script
-done
-
-echo 'key <tab>' >> $script
-
-echo 'key ^J' >> $script
-
-echo 'key Q' >> $script
-echo 'key y' >> $script
-
-lynx $website -accept_all_cookies -cmd_script=login.txt
-
-
+chall=$(curl -i https://alcasar.laplateforme.io/intercept.php -L  | grep -o -P '(?<=challenge=).*(?=&called)')
+curl -H "Content-Type: multipart/form-data" -X POST -F challenge=$chall -F username=$username -F password=$password -F button=Authentication https://alcasar.laplateforme.io/intercept.php -L
